@@ -76,6 +76,7 @@ export default function SignIn() {
                 type="email"
                 placeholder="name@company.com"
                 id="email"
+                defaultValue="xaceri8160@cgbird.com"
                 onChange={handleChange}
               />
             </div>
@@ -85,6 +86,7 @@ export default function SignIn() {
                 type="password"
                 placeholder="**********"
                 id="password"
+                defaultValue="testUser"
                 onChange={handleChange}
               />
             </div>

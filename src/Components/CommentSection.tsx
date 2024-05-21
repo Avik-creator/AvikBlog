@@ -32,6 +32,7 @@ export default function CommentSection({ postId }: { postId: string }) {
         "https://avik-blog-api.vercel.app/api/comment/create",
         {
           method: "POST",
+          credentials:"include",
           headers: {
             "Content-Type": "application/json",
           },
@@ -63,6 +64,7 @@ export default function CommentSection({ postId }: { postId: string }) {
         `https://avik-blog-api.vercel.app/api/comment/likeComment/${commentId}`,
         {
           method: "PUT",
+          credentials:"include",
         }
       );
       if (res.ok) {
@@ -124,6 +126,7 @@ export default function CommentSection({ postId }: { postId: string }) {
         `https://avik-blog-api.vercel.app/api/comment/deleteComment/${commentId}`,
         {
           method: "DELETE",
+          credentials:"include",
         }
       );
       if (res.ok) {

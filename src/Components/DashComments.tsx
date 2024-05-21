@@ -133,6 +133,7 @@ export default function DashComments() {
         `https://avik-blog-api.vercel.app/api/comment/deleteComment/${commentIdToDelete}`,
         {
           method: "DELETE",
+          credentials:"include",
         }
       );
       const data = await res.json();

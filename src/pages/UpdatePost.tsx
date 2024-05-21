@@ -108,6 +108,7 @@ export default function UpdatePost() {
         `/api/post/updatepost/${formData._id}/${currentUser._id}`,
         {
           method: "PUT",
+          credentials:"include",
           headers: {
             "Content-Type": "application/json",
           },

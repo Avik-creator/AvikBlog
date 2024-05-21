@@ -77,6 +77,7 @@ export default function CreatePost() {
         "https://avik-blog-api.vercel.app/api/post/create",
         {
           method: "POST",
+          credentials:"include",
           headers: {
             "Content-Type": "application/json",
           },

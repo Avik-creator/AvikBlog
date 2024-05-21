@@ -69,6 +69,7 @@ export default function DashUsers() {
         `https://avik-blog-api.vercel.app/api/user/delete/${userIdToDelete}`,
         {
           method: "DELETE",
+          credentials:"include",
         }
       );
       const data = await res.json();

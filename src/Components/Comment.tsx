@@ -63,6 +63,7 @@ export default function Comment({
         `https://avik-blog-api.vercel.app/api/comment/editComment/${commentId}`,
         {
           method: "PUT",
+          credentials:"include",
           headers: {
             "Content-Type": "application/json",
           },

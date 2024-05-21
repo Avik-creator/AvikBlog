@@ -70,6 +70,7 @@ export default function DashPosts() {
         `https://avik-blog-api.vercel.app/api/post/deletepost/${postIdToDelete}/${currentUser._id}`,
         {
           method: "DELETE",
+          credentials:"include",
         }
       );
       const data = await res.json();

@@ -26,7 +26,10 @@ export default function DashComments() {
       setIsLoading(true);
       try {
         const res = await fetch(
-          `https://avik-blog-api.vercel.app/api/comment/getcomments`
+          `https://avik-blog-api.vercel.app/api/comment/getcomments`,
+          {
+            credentials:"include",
+          }
         );
 
         const data = await res.json();
@@ -54,7 +57,10 @@ export default function DashComments() {
         if (!usernames[comment.userId]) {
           try {
             const res = await fetch(
-              `https://avik-blog-api.vercel.app/api/user/${comment.userId}`
+              `https://avik-blog-api.vercel.app/api/user/${comment.userId}`,
+              {
+                credentials:"include",
+              }
             );
             const data = await res.json();
             if (res.ok) {
@@ -80,7 +86,10 @@ export default function DashComments() {
         if (!usernames[comment.postId]) {
           try {
             const res = await fetch(
-              `https://avik-blog-api.vercel.app/api/post/getposts/${comment.postId}`
+              `https://avik-blog-api.vercel.app/api/post/getposts/${comment.postId}`,
+              {
+                  credentials:"include",
+              }
             );
             const data = await res.json();
             if (res.ok) {
@@ -112,7 +121,10 @@ export default function DashComments() {
     const startIndex = comments.length;
     try {
       const res = await fetch(
-        `https://avik-blog-api.vercel.app/api/comment/getcomments?startIndex=${startIndex}`
+        `https://avik-blog-api.vercel.app/api/comment/getcomments?startIndex=${startIndex}`,
+        {
+          credentials:"include",
+        }
       );
       const data = await res.json();
       if (res.ok) {

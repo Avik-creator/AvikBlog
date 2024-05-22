@@ -25,7 +25,10 @@ export default function DashPosts() {
       setIsLoading(true);
       try {
         const res = await fetch(
-          `https://avik-blog-api.vercel.app/api/post/getposts?userId=${currentUser._id}`
+          `https://avik-blog-api.vercel.app/api/post/getposts?userId=${currentUser._id}`,
+          {
+            credentials:"include",
+        }
         );
         const data = await res.json();
         if (res.ok) {
@@ -49,7 +52,10 @@ export default function DashPosts() {
     const startIndex = userPosts.length;
     try {
       const res = await fetch(
-        `https://avik-blog-api.vercel.app/api/post/getposts?userId=${currentUser._id}&startIndex=${startIndex}`
+        `https://avik-blog-api.vercel.app/api/post/getposts?userId=${currentUser._id}&startIndex=${startIndex}`,
+        {
+          credentials:"include",
+        }
       );
       const data = await res.json();
       if (res.ok) {

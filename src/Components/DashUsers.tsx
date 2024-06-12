@@ -25,7 +25,10 @@ export default function DashUsers() {
       setIsLoading(true);
       try {
         const res = await fetch(
-          `https://avik-blog-api.vercel.app/api/user/getusers`
+          `https://avik-blog-api.vercel.app/api/user/getusers`,
+          {
+          credentials:"include",
+          }
         );
         const data = await res.json();
         if (res.ok) {
@@ -49,7 +52,10 @@ export default function DashUsers() {
     const startIndex = users.length;
     try {
       const res = await fetch(
-        `https://avik-blog-api.vercel.app/api/user/getusers?startIndex=${startIndex}`
+        `https://avik-blog-api.vercel.app/api/user/getusers?startIndex=${startIndex}`,
+        {
+          credentials:"include",
+        }
       );
       const data = await res.json();
       if (res.ok) {

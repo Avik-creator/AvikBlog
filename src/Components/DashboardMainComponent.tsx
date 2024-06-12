@@ -53,7 +53,10 @@ export default function DashboardMainComponent() {
       setIsLoading(true);
       try {
         const res = await fetch(
-          "https://avik-blog-api.vercel.app/api/user/getusers?limit=5"
+          "https://avik-blog-api.vercel.app/api/user/getusers?limit=5",
+          {
+            credentials:"include",
+          }
         );
         const data = await res.json();
         if (res.ok) {
@@ -71,7 +74,10 @@ export default function DashboardMainComponent() {
       try {
         setIsLoading(true);
         const res = await fetch(
-          "https://avik-blog-api.vercel.app/api/post/getposts?limit=5"
+          "https://avik-blog-api.vercel.app/api/post/getposts?limit=5",
+          {
+            credentials:"include",
+          }
         );
         const data = await res.json();
         if (res.ok) {
@@ -89,7 +95,10 @@ export default function DashboardMainComponent() {
       try {
         setIsLoading(true);
         const res = await fetch(
-          "https://avik-blog-api.vercel.app/api/comment/getcomments?limit=5"
+          "https://avik-blog-api.vercel.app/api/comment/getcomments?limit=5",
+          {
+            credentials:"include",
+          }
         );
         const data = await res.json();
         if (res.ok) {
